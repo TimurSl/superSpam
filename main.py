@@ -44,7 +44,6 @@ def main():
         sys.exit()
 
 
-    # pprint(config['enable-on-off'])
     print(
         "Super Spammer\n" +
         "\nCurrent settings: \n" +
