@@ -23,12 +23,12 @@ def main():
     global spam_button
 
     if Path("config.yaml").is_file():
-        with codecs.open('config.yaml') as f:
+        with codecs.open('config.yaml', encoding="UTF-8") as f:
             config = yaml.safe_load(f)
 
             msg = config["spam-msg"]
             interval = config["interval"]
-            spam_button = config["spam-button"]
+            spam_button = str(config["spam-button"])
             key.add_hotkey(spam_button, lambda: send_msg(msg))
     else:
         print("Not found config file, creating...")
